@@ -8,6 +8,13 @@
       "when": 1755092289739,
       "tag": "0000_ancient_harry_osborn",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1755229219509,
+      "tag": "0001_freezing_spencer_smythe",
+      "breakpoints": true
     }
   ]
 }

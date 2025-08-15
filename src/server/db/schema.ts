@@ -1,15 +1,20 @@
-import { pgTable, serial, text, timestamp, index } from "drizzle-orm/pg-core"
+import { like } from "drizzle-orm";
+import { pgTable, serial, text, timestamp, index, integer } from "drizzle-orm/pg-core"
+import { handle } from "hono/vercel";
 
 export const posts = pgTable(
   "posts",
   {
     id: serial("id").primaryKey(),
-    name: text("name").notNull(),
+    content:text("content").notNull(),
+    handle:text("handle").notNull(),
+    like:integer("like").notNull(),
+    image:text("image"),
     createdAt: timestamp("createdAt").defaultNow().notNull(),
     updatedAt: timestamp("updatedAt").defaultNow().notNull(),
   },
   (table) => [
-    index("Post_name_idx").on(table.name)
+    index("Post_handle_idx").on(table.handle)
   ]
 )
 
