@@ -1,4 +1,6 @@
 export type UserProfile = {
+  website: any;
+  location: string;
   id: number;
   clerkId: string;
   email: string;
